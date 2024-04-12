@@ -48,10 +48,14 @@
   (use-package counsel-projectile
     :ensure t
     :config
-    (require 'counsel-projectile)
-    (counsel-projectile-mode)
-    (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-    (global-set-key (kbd "C-c p A") 'projectile-add-known-project)))
+    (use-package smex
+      :ensure t
+      :config
+      (require 'counsel-projectile)
+      (counsel-projectile-mode)
+      (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+      (global-set-key (kbd "C-c p A") 'projectile-add-known-project)
+      (global-set-key (kbd "M-x") 'counsel-M-x))))
 
 (when which-key-toggled
   (use-package which-key :ensure t :config (which-key-mode)))
@@ -65,7 +69,6 @@
     (setq enable-recursive-minibuffers t)
     (global-set-key "\C-s" 'swiper)
     (global-set-key (kbd "C-c C-r") 'ivy-resume)
-    (global-set-key (kbd "M-x") 'counsel-M-x)
     (global-set-key (kbd "C-x C-f") 'counsel-find-file)
     (global-set-key (kbd "C-c g") 'counsel-git)
     (global-set-key (kbd "C-c j") 'counsel-git-grep)

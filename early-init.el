@@ -1,4 +1,3 @@
-
 (add-hook 'window-setup-hook 'toggle-frame-maximized t)
 
 (setq dashboard-icon-type 'all-the-icons)

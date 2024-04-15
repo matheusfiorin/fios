@@ -17,3 +17,6 @@ url/
 auto-save-list/
 .DS_Store
 history
+.dap-breakpoints
+bookmarks
+tramp

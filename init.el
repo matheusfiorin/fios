@@ -29,6 +29,11 @@
   (use-package treemacs-all-the-icons
     :ensure t))
 
+;; Bookmark bindings
+(global-set-key (kbd "C-c C-c C-s") 'bookmark-set)
+(global-set-key (kbd "C-c C-c C-j") 'bookmark-jump)
+(global-set-key (kbd "C-c C-c C-d") 'bookmark-)
+
 ;; Toggle Features
 (defvar clojure-toggled            t "Add clojure support")
 (defvar cider-toggled              t "Add cider support")
@@ -53,6 +58,7 @@
       :config
       (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
       (global-set-key (kbd "C-c p A") 'projectile-add-known-project)
+      (global-set-key (kbd "C-c k") 'counsel-projectile-ag)
       (global-set-key (kbd "M-x") 'smex)
       (projectile-mode)
       (use-package projectile-ripgrep
@@ -185,7 +191,6 @@
   :bind (;; C-c bindings in `mode-specific-map'
          ("C-c M-x" . consult-mode-command)
          ("C-c h" . consult-history)
-         ("C-c k" . consult-kmacro)
          ("C-c m" . consult-man)
          ("C-c i" . consult-info)
          ([remap Info-search] . consult-info)
@@ -296,9 +301,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "524fa911b70d6b94d71585c9f0c5966fe85fb3a9ddd635362bfabd1a7981a307" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "714ab222604a0555b118f1c37d60a9e233a8d84a49349a3443485a62d06079c2" "2ebd6217d74282fe204f58a64adea7d210c60a5cd11e57f9e435b01e35d2b028" "cdb768021bf99e838364dd5e7fc22d9b6f790124c97be379a5bda4f900e50c26" "b15bf9cabdd891f0c163d1b914e901d0d9f8f74ad4075b2b8e68a8f35247f82b" default))
+   '("d77d6ba33442dd3121b44e20af28f1fae8eeda413b2c3d3b9f1315fbda021992" "efcecf09905ff85a7c80025551c657299a4d18c5fcfedd3b2f2b6287e4edd659" "00445e6f15d31e9afaa23ed0d765850e9cd5e929be5e8e63b114a3346236c44c" "524fa911b70d6b94d71585c9f0c5966fe85fb3a9ddd635362bfabd1a7981a307" "51ec7bfa54adf5fff5d466248ea6431097f5a18224788d0bd7eb1257a4f7b773" "57a29645c35ae5ce1660d5987d3da5869b048477a7801ce7ab57bfb25ce12d3e" "4c56af497ddf0e30f65a7232a8ee21b3d62a8c332c6b268c81e9ea99b11da0d3" "285d1bf306091644fb49993341e0ad8bafe57130d9981b680c1dbd974475c5c7" "714ab222604a0555b118f1c37d60a9e233a8d84a49349a3443485a62d06079c2" "2ebd6217d74282fe204f58a64adea7d210c60a5cd11e57f9e435b01e35d2b028" "cdb768021bf99e838364dd5e7fc22d9b6f790124c97be379a5bda4f900e50c26" "b15bf9cabdd891f0c163d1b914e901d0d9f8f74ad4075b2b8e68a8f35247f82b" default))
  '(package-selected-packages
-   '(lsp-ui embark-consult embark consult marginalia orderless vertico projectile-ripgrep ripgrep color-theme-sanityinc-tomorrow solarized-theme wildcharm-light-theme xah-fly-keys treemacs-all-the-icons dap-mode clj-refactor rainbow-delimiters cider clojure-ts-mode testcover-mark-line smex counsel-projectile which-key persp-projectile persp-mode dashboard all-the-icons)))
+   '(catppuccin-theme ag lsp-ui embark-consult embark consult marginalia orderless vertico projectile-ripgrep ripgrep color-theme-sanityinc-tomorrow solarized-theme wildcharm-light-theme xah-fly-keys treemacs-all-the-icons dap-mode clj-refactor rainbow-delimiters cider clojure-ts-mode testcover-mark-line smex counsel-projectile which-key persp-projectile persp-mode dashboard all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
